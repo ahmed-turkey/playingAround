@@ -1,34 +1,34 @@
-const calculateSumButtonElement = document.querySelector('#calculator button');
-function calculateSum() {
-  const userNumberInputElement = document.getElementById('user-number');
-  const enteredNumber = userNumberInputElement.value;
-  let sumUpToNumber = 0;
-  for (let i = 0; i <=enteredNumber; i++) {
-    sumUpToNumber= sumUpToNumber + i;
-  }
-  const outputNumber= document.getElementById('calculated-sum');
-  outputNumber.textContent = sumUpToNumber;
-  outputNumber.style.display= 'block';};
-
-calculateSumButtonElement.addEventListener('click',calculateSum);
-
-
-
-// const calculateSumButtonElement = document.querySelector("#calculator button");
-
-// function calculateSum(params) {
-//   const userNumberInputElement = document.getElementById("user-number");
-//   const enterednumber = userNumberInputElement.value;
-
+// const calculateSumButtonElement = document.querySelector('#calculator button');
+// function calculateSum() {
+//   const userNumberInputElement = document.getElementById('user-number');
+//   const enteredNumber = userNumberInputElement.value;
 //   let sumUpToNumber = 0;
-//   for (let i = 0; i <= enterednumber; i++) {
-//     sumUpToNumber = sumUpToNumber + i;
+//   for (let i = 0; i <=enteredNumber; i++) {
+//     sumUpToNumber= sumUpToNumber + i;
 //   }
-//   const outPutResultElement = document.getElementById("calculated-sum");
-//   outPutResultElement.textContent = sumUpToNumber;
-//   outPutResultElement.style.display = "block";
-// };
-// calculateSumButtonElement.addEventListener("click", calculateSum);
+//   const outputNumber= document.getElementById('calculated-sum');
+//   outputNumber.textContent = sumUpToNumber;
+//   outputNumber.style.display= 'block';};
+
+// calculateSumButtonElement.addEventListener('click',calculateSum);
+
+
+
+const calculateSumButtonElement = document.querySelector("#calculator button");
+
+function calculateSum(params) {
+  const userNumberInputElement = document.getElementById("user-number");
+  const enterednumber = userNumberInputElement.value;
+
+  let sumUpToNumber = 0;
+  for (let i = 0; i <= enterednumber; i++) {
+    sumUpToNumber = sumUpToNumber + i;
+  }
+  const outPutResultElement = document.getElementById("calculated-sum");
+  outPutResultElement.textContent = sumUpToNumber;
+  outPutResultElement.style.display = "block";
+};
+calculateSumButtonElement.addEventListener("click", calculateSum);
 
 const highlightAllLinksButtonElement = document.querySelector(
   "#highlight-links button"
