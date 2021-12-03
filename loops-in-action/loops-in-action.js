@@ -28,33 +28,52 @@ function calculateSum(params) {
 }
 calculateSumButtonElement.addEventListener("click", calculateSum);
 
-const highlightAllLinksButtonElement = document.querySelector(
+// const highlightAllLinksButtonElement = document.querySelector(
+//   "#highlight-links button"
+// );
+
+// function highlightLinks() {
+//   const anchorElements = document.querySelectorAll("#highlight-links a");
+
+//   for (const anchorElement of anchorElements) {
+//     anchorElement.classList.add("highlight");
+//   }
+// }
+// highlightAllLinksButtonElement.addEventListener("click", highlightLinks);
+
+const highlightAnchorElementsButton = document.querySelector(
   "#highlight-links button"
 );
-
-function highlightLinks() {
-  const anchorElements = document.querySelectorAll("#highlight-links a");
-
-  for (const anchorElement of anchorElements) {
+function highlightingAllAnchorElements() {
+  const highlightedElements = document.querySelectorAll("#highlight-links a");
+  for (const anchorElement of highlightedElements) {
     anchorElement.classList.add("highlight");
   }
 }
-highlightAllLinksButtonElement.addEventListener("click", highlightLinks);
-
-// const highlightAnchorElementsButton = document.querySelector('#highlight-links button');
-// function highlightingAllAnchorElements() {
-//   const highlightedElements = document.querySelectorAll('#highlight-links a');
-//  for (const anchorElement of highlightedElements) {
-//    anchorElement.classlist.add('highlight');
-//  }
-// }
-// highlightAncherElementsButton.addEventListener('click', highlightingAllAnchorElements);
+highlightAnchorElementsButton.addEventListener(
+  "click",
+  highlightingAllAnchorElements
+);
 
 const userData = {
   firstName: "ahmed",
   lastName: "turkey",
-  age: 32,};
-  
+  age: 32,
+};
+const displyUserDataButtonElement = document.querySelector("#user-data button");
+
+function displyingUserData(params) {
+  const outputData = document.getElementById("output-user-data");
+  outputData.innerHTML = "";
+  for (const propertyName in userData) {
+    const newDataListElement = document.createElement("li");
+    const outputText =
+      propertyName.toLocaleUpperCase() + ": " + userData[propertyName];
+    newDataListElement.textContent = outputText;
+    outputData.append(newDataListElement);
+  }
+}
+displyUserDataButtonElement.addEventListener("click", displyingUserData);
 // const userData = {
 //   firstName: "ahmed",
 //   lastName: "turkey",
@@ -79,38 +98,62 @@ const userData = {
 
 // displayUserDataButtonElement.addEventListener("click", displayUserData);
 
-const rollDiceButtonElement = document.querySelectorAll("#statistics button");
+// const rollDiceButtonElement = document.querySelectorAll("#statistics button");
 
+// function rollDice() {
+//   return Math.floor(Math.random() * 6) + 1;
+// }
+
+// function driveNumbersOfDiceRoll() {
+//   const targetNumberInputElement =
+//     document.getElementById("user-target-number");
+//   const diceRollsLi = document.getElementById("dice-rolls");
+//   const enteredNumber = targetNumberInputElement.value;
+//   diceRollsLi.innerHTML = "";
+
+//   let hasRolledTargetNumber = false;
+//   let numberOfRolls = 0;
+//   while (!hasRolledTargetNumber) {
+//     const rolledNumber = rollDice();
+//     //  if (rolledNumber == enteredNumber) {
+//     // hasRolledTargetNumber = true;
+//     //  }
+//     numberOfRolls++;
+//     const newRollListElement = document.createElement("li");
+//     const outputtext = "roll";
+//     +numberOfRolls + ": " + rolledNumber;
+//     newRollListElement.textContent = outputtext;
+//     diceRollsLi.append(newRollListElement);
+//     hasRolledTargetNumber = rolledNumber == enteredNumber;
+//   }
+//   const outputTotalRollsElement = document.getElementById("output-total-rolls");
+//   const outputTargetNumberElement = document.getElementById(
+//     output - target - number
+//   );
+//   outputTargetNumberElement.textContent = enteredNumber;
+// }
+// rollDiceButtonElement.addEventListener("click", driveNumbersOfDiceRoll);
+const rollDiceButtonElement = document.querySelector("#statistics button ");
 function rollDice() {
-  return Math.floor(Math.random() * 6) + 1;
+  let rand = Math.ceil(Math.random() * 6);
+  return rand;
 }
-
-function driveNumbersOfDiceRoll() {
-  const targetNumberInputElement =
-    document.getElementById("user-target-number");
+function deriveNumberOfDiceRolls() {
+  const targetNumberInputElement = document.getElementById("user-target-number");
   const diceRollsLi = document.getElementById("dice-rolls");
-  const enteredNumber = targetNumberInputElement.value;
+  const enteredNumber = +targetNumberInputElement.value;
   diceRollsLi.innerHTML = "";
-
   let hasRolledTargetNumber = false;
-  let numberOfRolls = 0;
+  let counter = 0;
   while (!hasRolledTargetNumber) {
+    counter++;
+    const newRollListElement = document.createElement('li');
     const rolledNumber = rollDice();
-    //  if (rolledNumber == enteredNumber) {
-    // hasRolledTargetNumber = true;
-    //  }
-    numberOfRolls++;
-    const newRollListElement = document.createElement("li");
-    const outputtext = "roll";
-    +numberOfRolls + ": " + rolledNumber;
-    newRollListElement.textContent = outputtext;
-    diceRollsLi.append(newRollListElement);
     hasRolledTargetNumber = rolledNumber == enteredNumber;
   }
-  const outputTotalRollsElement = document.getElementById("output-total-rolls");
-  const outputTargetNumberElement = document.getElementById(
-    output - target - number
-  );
+  const outputTotalRollsElement = document.getElementById('output-total-rolls');
+  const outputTargetNumberElement = document.getElementById('output-target-number');
   outputTargetNumberElement.textContent = enteredNumber;
+  outputTotalRollsElement.textContent = counter;
 }
-rollDiceButtonElement.addEventListener("click", driveNumbersOfDiceRoll);
+rollDiceButtonElement.addEventListener("click", deriveNumberOfDiceRolls);
