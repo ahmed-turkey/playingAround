@@ -30,18 +30,19 @@ function calculateSum(params) {
 };
 calculateSumButtonElement.addEventListener("click", calculateSum);
 
-const highlightAllLinksButtonElement = document.querySelector(
-  "#highlight-links button"
-);
 
-function highlightLinks() {
-  const anchorElements = document.querySelectorAll("#highlight-links a");
+// const highlightAllLinksButtonElement = document.querySelector(
+//   "#highlight-links button"
+// );
 
-  for (const anchorElement of anchorElements) {
-    anchorElement.classList.add("highlight");
-  }
-}
-highlightAllLinksButtonElement.addEventListener("click", highlightLinks);
+// function highlightLinks() {
+//   const anchorElements = document.querySelectorAll("#highlight-links a");
+
+//   for (const anchorElement of anchorElements) {
+//     anchorElement.classList.add("highlight");
+//   }
+// }
+// highlightAllLinksButtonElement.addEventListener("click", highlightLinks);
 
 const userData = {
   firstName: "ahmed",
