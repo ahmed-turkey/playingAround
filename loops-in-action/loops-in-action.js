@@ -30,6 +30,14 @@ function calculateSum(params) {
 };
 calculateSumButtonElement.addEventListener("click", calculateSum);
 
+const highlightAnchorElementsButton = document.querySelector('#highlight-links button');
+function highlightingAllAnchorElements() {
+  const highlightedElements = document.querySelectorAll('#highlight-links a');
+ for (const anchorElement of highlightedElements) {
+   anchorElement.classlist.add('highlight');
+ }
+}
+highlightAncherElementsButton.addEventListener('click', highlightingAllAnchorElements)
 
 // const highlightAllLinksButtonElement = document.querySelector(
 //   "#highlight-links button"
