@@ -12,8 +12,6 @@
 
 // calculateSumButtonElement.addEventListener('click',calculateSum);
 
-
-
 const calculateSumButtonElement = document.querySelector("#calculator button");
 
 function calculateSum(params) {
@@ -27,54 +25,59 @@ function calculateSum(params) {
   const outPutResultElement = document.getElementById("calculated-sum");
   outPutResultElement.textContent = sumUpToNumber;
   outPutResultElement.style.display = "block";
-};
+}
 calculateSumButtonElement.addEventListener("click", calculateSum);
 
-const highlightAnchorElementsButton = document.querySelector('#highlight-links button');
-function highlightingAllAnchorElements() {
-  const highlightedElements = document.querySelectorAll('#highlight-links a');
- for (const anchorElement of highlightedElements) {
-   anchorElement.classlist.add('highlight');
- }
+const highlightAllLinksButtonElement = document.querySelector(
+  "#highlight-links button"
+);
+
+function highlightLinks() {
+  const anchorElements = document.querySelectorAll("#highlight-links a");
+
+  for (const anchorElement of anchorElements) {
+    anchorElement.classList.add("highlight");
+  }
 }
-highlightAncherElementsButton.addEventListener('click', highlightingAllAnchorElements)
+highlightAllLinksButtonElement.addEventListener("click", highlightLinks);
 
-// const highlightAllLinksButtonElement = document.querySelector(
-//   "#highlight-links button"
-// );
-
-// function highlightLinks() {
-//   const anchorElements = document.querySelectorAll("#highlight-links a");
-
-//   for (const anchorElement of anchorElements) {
-//     anchorElement.classList.add("highlight");
-//   }
+// const highlightAnchorElementsButton = document.querySelector('#highlight-links button');
+// function highlightingAllAnchorElements() {
+//   const highlightedElements = document.querySelectorAll('#highlight-links a');
+//  for (const anchorElement of highlightedElements) {
+//    anchorElement.classlist.add('highlight');
+//  }
 // }
-// highlightAllLinksButtonElement.addEventListener("click", highlightLinks);
+// highlightAncherElementsButton.addEventListener('click', highlightingAllAnchorElements);
 
 const userData = {
   firstName: "ahmed",
   lastName: "turkey",
-  age: 32,
-};
-const displayUserDataButtonElement =
-  document.querySelector("#user-data button");
+  age: 32,};
+  
+// const userData = {
+//   firstName: "ahmed",
+//   lastName: "turkey",
+//   age: 32,
+// };
+// const displayUserDataButtonElement =
+//   document.querySelector("#user-data button");
 
-function displayUserData() {
-  const outputData = document.getElementById("output-user-data");
+// function displayUserData() {
+//   const outputData = document.getElementById("output-user-data");
 
-  outputData.innerHTML = "";
+//   outputData.innerHTML = "";
 
-  for (const propertyName in userData) {
-    const newDataListElement = document.createElement("li");
-    const outPutText =
-      propertyName.toUpperCase() + ":" + userData[propertyName];
-    newDataListElement.textContent = outPutText;
-    outputData.append(newDataListElement);
-  }
-}
+//   for (const propertyName in userData) {
+//     const newDataListElement = document.createElement("li");
+//     const outPutText =
+//       propertyName.toUpperCase() + ":" + userData[propertyName];
+//     newDataListElement.textContent = outPutText;
+//     outputData.append(newDataListElement);
+//   }
+// }
 
-displayUserDataButtonElement.addEventListener("click", displayUserData);
+// displayUserDataButtonElement.addEventListener("click", displayUserData);
 
 const rollDiceButtonElement = document.querySelectorAll("#statistics button");
 
